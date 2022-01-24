@@ -1,9 +1,19 @@
 package com.capgemini.entities;
 
 import java.io.Serializable;
+
+/**
+ * Comentarios publicados en el foro
+ * 
+ * @author Andres
+ */ 
+
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,23 +25,25 @@ import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
-@RequiredArgsConstructor
 @AllArgsConstructor
-public class Categorie implements Serializable {
+@RequiredArgsConstructor
+public class Comment implements Serializable{
 	
-  /**
+	
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-	
-    private String description;
-    private String name;
-  
-    @OneToMany(mappedBy = "categorie")
-	private List<Post> posts;
+	private int id;
+	private String content;
+    private Date publish_date;
+    private int post_id;
+    private int user_id;
+    
+	@OneToMany(fetch = FetchType.LAZY,  cascade = CascadeType.MERGE, mappedBy = "user")
+	private List<User> users;
+    	
 
 }
