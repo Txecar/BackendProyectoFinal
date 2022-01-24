@@ -31,7 +31,7 @@ public class Categorie implements Serializable {
     private String description;
     private String name;
   
-    @OneToMany(mappedBy = "categorie")
-	private List<Post> posts;
+    //@OneToMany(mappedBy = "categorie")
+	//private List<Post> posts;
 
 }
