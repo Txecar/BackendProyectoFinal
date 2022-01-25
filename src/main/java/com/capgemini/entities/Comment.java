@@ -17,7 +17,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,11 +42,10 @@ public class Comment implements Serializable{
 	private int id;
 	private String content;
     private Date publish_date;
-    private int post_id;
-    private int user_id;
     
-	@OneToMany(fetch = FetchType.LAZY,  cascade = CascadeType.MERGE, mappedBy = "user")
-	private List<User> users;
+	@OneToOne
+	//(fetch = FetchType.LAZY,  cascade = CascadeType.MERGE, mappedBy = "comment")
+	private User user;
     	
 
 }

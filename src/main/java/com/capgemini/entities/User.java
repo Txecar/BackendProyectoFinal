@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,16 +34,17 @@ public class User implements Serializable{
 	
 	private String nombre;
 	private String apellidos;
+	private String pass;
 	private String email;
 
-	//@ManyToOne
-	//private Role role;
+	@ManyToOne
+	private Role role;
 	
-	@OneToMany(mappedBy = "post")
-	private List<Post> posts;
+	//@OneToMany(mappedBy = "user")
+	//private List<Post> posts;
 	
-	@OneToMany(mappedBy = "comment")
-	private Comment comment;
+	//@OneToMany(mappedBy = "user")
+	//private List<Comment> comment;
 	
 	
 	

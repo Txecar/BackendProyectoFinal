@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,9 +32,12 @@ public class Post implements Serializable{/**
 	
 	private String contenido;
 	
-	@ManyToMany(mappedBy = "categorie")
-	private List<Categorie> categories;
-	
 	@ManyToOne
+	private Categorie categorie;
+	
+	@OneToMany(mappedBy = "post")
+	private List<Photo> photos;
+	
+	@OneToOne
 	private User user;
 }
