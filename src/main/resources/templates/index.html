@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="baseTemplate :: cabecera">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h1>37e55cbc-d662-487f-9bbb-4d4a54e7600b</h1>
+	<div class="container-fluid px-4 px-md-4 py-5 mx-auto">
+		<div class="row d-flex justify-content-between align">
+			<div class="card p-0 border-0 rounded-0 mb-5">
+				<div class="card border-0 rounded-0 card0">
+					<h1 class="mb-0">Hello!</h1>
+					<p>Please login with your account</p>
+					<label class="font-weight-bold mb-0">Email</label> <input
+						type="text" name="email" class="mb-4" placeholder="abc@xyz.com">
+					<label class="font-weight-bold mb-0">Password</label> <input
+						type="password" name="password"
+						placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"> <a
+						href="#" class="text-sm ml-auto text-dim">Forgot Password?</a>
+					<div class="row justify-content-center mt-4">
+						<button type="submit" class="btn btn-yellow px-5">Login</button>
+					</div>
+					<div class="row justify-content-center mt-3">
+						<small class="text-dim">or login with</small>
+					</div>
+					<div class="row justify-content-center mt-3 mb-2">
+						<img class="icon mr-2" src="https://i.imgur.com/j8ZGqG2.png">
+						<img class="icon ml-2" src="https://i.imgur.com/AX2lVgH.png">
+					</div>
+				</div>
+				<img src="https://i.imgur.com/nUR4zg3.jpg" class="mt-auto">
+			</div>
+		</div>
+	</div>
+
+	<script th:replace="baseTemplate :: javascriptSupport"></script>
+
 </body>
 </html>
