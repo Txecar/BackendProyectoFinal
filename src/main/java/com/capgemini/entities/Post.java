@@ -39,5 +39,5 @@ public class Post implements Serializable{/**
 	private List<Photo> photos;
 	
 	@OneToOne
-	private User user;
+	private Usuario user;
 }

@@ -44,7 +44,7 @@ public class Comment implements Serializable{
     
 	@OneToOne
 	//(fetch = FetchType.LAZY,  cascade = CascadeType.MERGE, mappedBy = "comment")
-	private User user;
+	private Usuario user;
     	
 
 }
