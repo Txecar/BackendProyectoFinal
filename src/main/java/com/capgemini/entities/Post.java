@@ -7,20 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 @Entity
-@Data
-@AllArgsConstructor
-@RequiredArgsConstructor
 public class Post implements Serializable{/**
 	 * 
 	 */
@@ -40,4 +31,64 @@ public class Post implements Serializable{/**
 	
 	@OneToOne
 	private Usuario user;
+
+	public Post() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Post(Long id, String contenido, Categorie categorie, List<Photo> photos, Usuario user) {
+		super();
+		this.id = id;
+		this.contenido = contenido;
+		this.categorie = categorie;
+		this.photos = photos;
+		this.user = user;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getContenido() {
+		return contenido;
+	}
+
+	public void setContenido(String contenido) {
+		this.contenido = contenido;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	public List<Photo> getPhotos() {
+		return photos;
+	}
+
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
+	}
+
+	public Usuario getUser() {
+		return user;
+	}
+
+	public void setUser(Usuario user) {
+		this.user = user;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 }

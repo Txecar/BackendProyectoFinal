@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.capgemini.controllers.dto.UsuarioRegistroDTO;
 import com.capgemini.dao.IUserDao;
@@ -19,7 +21,7 @@ import com.capgemini.entities.Role;
 import com.capgemini.entities.Usuario;
 import com.capgemini.service.IUserService;
 
-
+@Service
 public class UserServiceImpl implements IUserService{
 	
 	private IUserDao userDao;
